@@ -1,0 +1,55 @@
+*{
+    margin: 0;
+    padding: 0;
+    background-color: rgb(180, 180, 180);
+} 
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: rgb(0, 0, 0);
+}
+
+form {
+    text-align: center;
+    border-radius: 100px;
+    padding: 50px;    
+}
+#topo{
+    color: rgb(0, 0, 0);
+    text-shadow: 10px 12px 12px;
+}
+.form-control{
+    background-color:rgb(212, 212, 212) ;
+    width: 100%;
+    margin: 0;
+    display: block;
+    text-align: center;  
+}
+.form-control:focus{
+    background-color:rgb(212, 212, 212) ;
+}
+#exibicao1{
+    padding: -1px;
+    font-weight: bold;
+    color: #ff0000;
+}
+#exibicao2{
+    padding: 0px;
+    font-weight: bold;
+    color: #ff0000;
+}
+#listaGeral{
+    padding-left: 0;
+    list-style-type: none;
+    cursor: pointer;
+    font-weight: bold;
+    color: #001aff;
+}
+#listaGeral li {
+    display: inline-block;
+    margin-left: 3px;
+}
