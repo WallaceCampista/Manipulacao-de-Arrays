@@ -53,3 +53,7 @@ form {
     display: inline-block;
     margin-left: 3px;
 }
+#indicacao{
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+}

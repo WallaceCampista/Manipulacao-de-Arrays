@@ -1,9 +1,9 @@
 //Criação dos arrays
-const numeros = [];
-const text = [];
-const geral = numeros.concat(text);
+var numeros = [];
+var text = [];
+var geral = numeros.concat(text);
 
-//adicionando valor ao vetor com evento de 'enter' do teclado
+//adicionando valor ao vetor NUMEROS com evento de 'enter' do teclado
 document.getElementById('formGroupExampleInput').addEventListener('keypress', function(event) {
     if (event.key === 'Enter') {
         const inputNumero = document.getElementById('formGroupExampleInput').value;
@@ -21,7 +21,7 @@ document.getElementById('formGroupExampleInput').addEventListener('keypress', fu
     }
 });
 
-//adicionando valor ao vetor com evento de 'enter' do teclado
+//adicionando valor ao vetor TEXT com evento de 'enter' do teclado
 document.getElementById('formGroupExampleInput2').addEventListener('keypress', function(event) {
     if (event.key === 'Enter') {
         const inputTexto = document.getElementById('formGroupExampleInput2').value;
@@ -63,6 +63,7 @@ function ordenarDecrescenteText(array) {
     return array.slice().sort((a, b) => b.localeCompare(a));
 }
 
+
 // Evento de escuta para o botão de ordenar números em ordem crescente para array numeral
 document.getElementById('btnCrescente').addEventListener('click', function() {
     document.getElementById('exibicao1').textContent = ordenarCrescente(numeros).join(' ');
@@ -73,23 +74,24 @@ document.getElementById('btnDecrescente').addEventListener('click', function() {
     document.getElementById('exibicao1').textContent = ordenarDecrescente(numeros).join(' ');
 });
 
-// Evento de escuta para o botão de ordenar números em ordem crescente para array string
+// Evento de escuta para o botão de ordenar textos em ordem crescente para array string
 document.getElementById('btnCrescente2').addEventListener('click', function() {
     document.getElementById('exibicao2').textContent = ordenarCrescenteText(text).join(' ');
 });
 
-// Evento de escuta para o botão de ordenar números em ordem decrescente para array string
+// Evento de escuta para o botão de ordenar textos em ordem decrescente para array string
 document.getElementById('btnDecrescente2').addEventListener('click', function() {
     document.getElementById('exibicao2').textContent = ordenarDecrescenteText(text).join(' ');
 
 });
+
 
 /////REMOVENDO VALORES/////
 document.addEventListener("DOMContentLoaded", function() {
     //adicionando evento de clique ao elemento exibicaoGeral
     document.getElementById('listaGeral').addEventListener('click', function(event) {
         const selectedElement = event.target;
-        const clickedValue = event.target.textContent; //obtém o valor clicado e remove espaços em branco extras
+        const clickedValue = event.target.textContent; //obtém o valor clicado
         const numIndex = numeros.indexOf(clickedValue); // Verifica se o valor clicado está no array de números
         const textIndex = text.indexOf(clickedValue); // Verifica se o valor clicado está no array de texto
                
@@ -100,7 +102,7 @@ document.addEventListener("DOMContentLoaded", function() {
             selectedElement.remove();
         }
               
-        // selectedElement.remove();
+        // Atualiza exibicao dos vetores após toda operacao
         document.getElementById('exibicao1').textContent = numeros.join(' ');
         document.getElementById('exibicao2').textContent = text.join(' ');
     });
